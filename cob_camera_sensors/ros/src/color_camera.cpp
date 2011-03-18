@@ -207,8 +207,8 @@ public:
 
 	/// Callback function for image requests on topic 'request_image'
 	void pollCallback(polled_camera::GetPolledImage::Request& req,
-			polled_camera::GetPolledImage::Response& res, 
-			sensor_msgs::Image& image_msg, sensor_msgs::CameraInfo& info)
+			  polled_camera::GetPolledImage::Response& res,
+			  sensor_msgs::Image& image_msg, sensor_msgs::CameraInfo& info)
 	{
 		/// Acquire new image
 		if (color_camera_->GetColorImage(&color_image_8U3_) & ipa_Utils::RET_FAILED)
@@ -246,7 +246,7 @@ public:
 			info.header.frame_id = "head_color_camera_l_link";
 
 		res.success = true;
-    return;
+		return;
 	}
 
 	bool loadParameters()
